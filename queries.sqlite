@@ -40,7 +40,16 @@ SELECT * FROM movies
 WHERE name BETWEEN 'D' and "G";
 
 SELECT * FROM movies
-WHERE year BETWEEN '1970' AND '1979';
+WHERE year BETWEEN 1970 AND 1979;
+
+SELECT * FROM movies
+WHERE year BETWEEN 1970 AND 1979
+  AND imdb_rating > 8;
+  
+SELECT * FROM movies
+WHERE genre LIKE 'horror'
+  AND year < 1985;
+  
 
 
 

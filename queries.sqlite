@@ -11,17 +11,23 @@ FROM movies;
 SELECT imdb_rating AS 'IMDb'
 FROM movies;
 
+--------- Using DISTINCT ---------
+
 SELECT DISTINCT genre
 FROM movies;
 
 SELECT DISTINCT year
 FROM movies;
 
+---------------------------------
+
 SELECT * FROM movies
 WHERE imdb_rating < 5;
 
 SELECT * FROM movies
 WHERE year >  2014;
+
+----------- Using WHERE with LIKE ------
 
 SELECT * FROM movies
 WHERE name LIKE 'Se_en';
@@ -32,9 +38,13 @@ WHERE name LIKE '%man%';
 SELECT * FROM movies
 WHERE name LIKE 'The %';
 
+----------- Using WHERE with IS NULL ------
+
 SELECT name
 FROM movies
 WHERE imdb_rating IS NULL;
+
+------ Using WHERE with BETWEEN ------
 
 SELECT * FROM movies
 WHERE name BETWEEN 'D' and "G";
@@ -59,6 +69,17 @@ WHERE year > 2014
 SELECT * FROM movies
 WHERE genre = 'romance'
   or genre = 'comedy';
+  
+------- Using ORDER BY --------
 
+SELECT name, year
+FROM movies
+ORDER BY name;
 
+SELECT name, year, imdb_rating FROM movies
+ORDER BY imdb_rating DESC;
 
+SELECT name, year FROM movies
+ORDER BY name;
+
+------- Using LIMIT -----------

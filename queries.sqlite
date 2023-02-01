@@ -83,3 +83,18 @@ SELECT name, year FROM movies
 ORDER BY name;
 
 ------- Using LIMIT -----------
+
+SELECT * FROM movies
+ORDER BY imdb_rating DESC
+LIMIT 3;
+
+------ Using CASE ----------
+
+SELECT name,
+  CASE 
+    WHEN genre = 'romance' THEN 'Chill'
+    WHEN genre = 'comedy' THEN 'Chill'
+    ELSE 'Intense'
+  END AS 'Mood'
+FROM movies;
+
